@@ -34,53 +34,6 @@ int main(int argv, char** argc)
 
     SemiGlobalMatching::SGMOptions sgmOpt;
 
-    // // 2.21 new add
-    // std::shared_ptr<float> dispLeft;
-    // for(int i=0; i<3; i++)
-    // {
-    //     uint32_t nowRows = static_cast<uint32_t>(rows / 4 * (i+1));
-    //     uint32_t nowCols = static_cast<uint32_t>(cols / 4 * (i+1));
-
-    //     std::shared_ptr<float> dispLeftTmp(new float[nowRows * nowCols], [](float* p){delete[] p;});
-
-    //     if(i > 0)
-    //     {
-    //         // interpolate disp
-    //         f1(dispLeft, dispLeftTmp);
-    //     }
-
-    //     // interpolate image
-    //     cv::Mat nowImgL = f2(imgL);
-    //     cv::Mat nowImgR = f2(imgR);
-
-    //     // option init
-    //     int dispType = 32;
-    //     int dispDist = 1;
-
-    //     sgmOpt.numPaths = 8;
-    //     sgmOpt.minDisp = 0;
-    //     sgmOpt.maxDisp = 64;
-    //     sgmOpt.p1 = 10;
-    //     sgmOpt.p2_int = 150;
-
-    //     SemiGlobalMatching sys;
-
-    //     if(!sys.Initialize(nowCols, nowRows, sgmOpt))
-    //     {
-    //         std::cout << "Initialize failed!" << std::endl;
-    //         return -1;
-    //     }
-
-    //     if(!sys.Match(nowImgL.data, nowImgR.data, dispLeftTmp))
-    //     {
-    //         std::cout << "Disp failed!" << std::endl;
-    //         return -1;
-    //     }
-
-    //     dispLeft = dispLeftTmp;
-    // }
-    // // 2.21 new add
-
     sgmOpt.numPaths = 8;
     sgmOpt.minDisp = 0;
     sgmOpt.maxDisp = 64;
